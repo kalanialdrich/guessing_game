@@ -1,0 +1,1 @@
+This is a guess how much Floyd Mayweather made in his last fight against Manny Pacquiao game. There are three questions involved. Answer correctly and you will move on to the next question. Answer incorrectly and you will be stuck on the same question forever(don't answer with commas or dollar signs).# guessing_game

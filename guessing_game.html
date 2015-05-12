@@ -1,0 +1,60 @@
+<script type="text/javascript">
+	var amountPerSecond = 93000;
+	var amountPerRound = 16740000
+	var amountForFight = 200880000
+	var msg;
+
+	var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
+
+	while (amountPerSecond) {
+		if (perSecondAnswer > amountPerSecond) {
+			msg = 'Too Much';
+			alert(msg);
+			var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
+		} else if (perSecondAnswer < amountPerSecond) {
+			msg = 'Not Enough';
+			alert(msg);
+			var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
+		} else {
+			msg = 'That is Correct';
+			alert(msg);
+			break;
+		}
+	}
+	
+	var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+
+	while (amountPerRound) {
+		if (perRoundAnswer > amountPerRound) {
+			msg = 'Too Much'
+			alert(msg);
+			var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+		} else if (perRoundAnswer < amountPerRound) {
+			msg = 'Not Enough'
+			alert(msg);
+			var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+		} else {
+			msg = 'That is Correct'
+			alert(msg);
+			break;
+		}
+	}
+
+	var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+	
+	while (amountForFight) {
+		if (perFightAnswer > amountForFight) {
+				msg = 'Too Much'
+				alert(msg);
+				var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+		} else if (perFightAnswer < amountForFight) {
+				msg = 'Not Enough'
+				alert(msg);
+				var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+			} else {
+				msg = '$$$ That is Correct! $$$'
+				alert(msg);
+				break;
+			}
+		}
+</script>
