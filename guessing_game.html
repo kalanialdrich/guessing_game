@@ -1,72 +1,121 @@
 <script type="text/javascript">
-	var amountPerSecond = 93000;
-	var amountPerRound = 16740000
-	var amountForFight = 200880000
-	var msg;
-
-	var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
-
-	while (amountPerSecond) {
-		if (isNaN(perSecondAnswer)) {
-			msg = 'That is not a number';
-			alert(msg);
-			var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
-		} else if (perSecondAnswer < amountPerSecond) {
-			msg = 'Not Enough';
-			alert(msg);
-			var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
-		}	else if(perSecondAnswer > amountPerSecond) {
-				msg = 'That is not a number!';
-				alert(msg);
-			var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
-		} else {
-			msg = 'That is Correct';
-			alert(msg);
-			break;
+	(function () {
+		var fight = {
+			rounds: 0,
+			ko: true,
+			mannywins: 0,
+			floydwins: 0
 		}
-	}
 
-	var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
-
-	while (amountPerRound) {
-		if (isNaN(perRoundAnswer)) {
-			msg = 'That is not a number'
-			alert(msg);
-			var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
-		} else if (perRoundAnswer < amountPerRound) {
-			msg = 'Not Enough'
-			alert(msg);
-			var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
-			} else if(perRoundAnswer > amountPerRound) {
-				msg = 'Too High'
-				alert(msg);
-				var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
-		} else {
-			msg = 'That is Correct'
-			alert(msg);
-			break;
+		while (fight.rounds < 5) {
+			var probablility = Math.random();
+			console.log(probablility);
+			fight.rounds++;
+			if (probablility	> 0.63) {
+				alert("Manny wins round " + fight.rounds + "!");
+				fight.mannywins++;
+			}else {
+				alert("Floyd wins round "+ fight.rounds+ "!");
+				fight.floydwins++;
+			};
 		}
-	}
 
-	var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
-
-	while (amountForFight) {
-		if (isNaN(perFightAnswer)) {
-				msg = 'That is not a number'
-				alert(msg);
-				var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
-		} else if (perFightAnswer < amountForFight) {
-				msg = 'Not Enough'
-				alert(msg);
-				var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
-				} else if(perFightAnswer > amountForFight) {
-					msg = 'Too High'
-					alert(msg);
-				var perFightAnswer = prompt('This fight went 12 rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+		while ((fight.rounds < 12) && (fight.ko == true)) {
+			var probablility = Math.random();
+			console.log(probablility);
+			fight.rounds++;
+			if (probablility	> .95) {
+				alert("Manny Wins in round " + fight.rounds + " via TKO!");
+				fight.ko = false;
+			} else if(probablility >.9) {
+				alert("Floyd Wins in round " + fight.rounds + " via TKO!");
+				fight.ko = false;
+			}else if(probablility > .7) {
+				alert("Manny wins round "+ fight.rounds+ "!");
+				fight.mannywins++;
 			} else {
-				msg = '$$$ That is Correct! $$$'
+				alert("Floyd wins round " + fight.rounds+ "!");
+				fight.floydwins++;
+			};
+		}
+		if ((fight.floydwins > fight.mannywins) && (fight.ko == true)) {
+			alert("Money wins with " + fight.floydwins + " rounds out of " + fight.rounds + "!");
+		} else if (fight.mannywins > fight.floydwins) {
+			alert("Pacman wins with " + fight.mannywins + " rounds out of " + fight.rounds + "!");
+		} else if (fight.floydwins == fight.mannywins) {
+			alert("Ends in a draw.");
+		} else {
+		};
+
+		var amountPerSecond = 93000;
+		var amountPerRound = 16740000;
+		var amountForFight = 200880000;
+		var msg;
+
+		var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000  and less than 95000)');
+
+		while (amountPerSecond) {
+			if (isNaN(perSecondAnswer)) {
+				msg = 'That is not a number';
+				alert(msg);
+				var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
+			} else if (perSecondAnswer < amountPerSecond) {
+				msg = 'Not Enough';
+				alert(msg);
+				var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
+			}	else if(perSecondAnswer > amountPerSecond) {
+					msg = 'That is not a number!';
+					alert(msg);
+				var perSecondAnswer = prompt('Approx. how much money did Floyd Mayweather make per second of his latest fight with Manny Pacquiao? (It is greater than 90000 and less than 95000)');
+			} else {
+				msg = 'That is Correct';
 				alert(msg);
 				break;
 			}
 		}
+
+		var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+
+		while (amountPerRound) {
+			if (isNaN(perRoundAnswer)) {
+				msg = 'That is not a number'
+				alert(msg);
+				var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+			} else if (perRoundAnswer < amountPerRound) {
+				msg = 'Not Enough'
+				alert(msg);
+				var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+				} else if(perRoundAnswer > amountPerRound) {
+					msg = 'Too High'
+					alert(msg);
+					var perRoundAnswer = prompt('Each round last 3 minutes long. How much did Mayweather make each round? (He made 93000 per second)')
+			} else {
+				msg = 'That is Correct'
+				alert(msg);
+				break;
+			}
+		}
+
+		var perFightAnswer = prompt('This fight went 12 Fight.rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+
+		while (amountForFight) {
+			if (isNaN(perFightAnswer)) {
+					msg = 'That is not a number'
+					alert(msg);
+					var perFightAnswer = prompt('This fight went 12 Fight.rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+			} else if (perFightAnswer < amountForFight) {
+					msg = 'Not Enough'
+					alert(msg);
+					var perFightAnswer = prompt('This fight went 12 Fight.rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+					} else if(perFightAnswer > amountForFight) {
+						msg = 'Too High'
+						alert(msg);
+					var perFightAnswer = prompt('This fight went 12 Fight.rounds. How much did Mayweather make for this fight? (He made 16740000 per round)')
+				} else {
+					msg = '$$$ That is Correct! $$$'
+					alert(msg);
+					break;
+				}
+			}
+	})();
 </script>
